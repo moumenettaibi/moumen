@@ -23,3 +23,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For now, we'll just show an alert
+            alert('Thanks for your message! I\'ll get back to you soon.');
+            contactForm.reset();
+        });
+    }
+});

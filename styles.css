@@ -12,8 +12,9 @@
     --color-gray-light: #f5f5f7;
     --color-gray: #86868b;
     --color-gray-dark: #333333;
-    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --section-spacing: 120px;
 }
 
 /* Base Styles */
@@ -44,12 +45,13 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
+    letter-spacing: -0.05em;
 }
 
 h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    text-align: center;
+    letter-spacing: -0.03em;
 }
 
 h3 {
@@ -58,13 +60,20 @@ h3 {
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 a {
     text-decoration: none;
     color: var(--color-black);
     transition: var(--transition-smooth);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 /* Custom Cursor */
@@ -200,15 +209,29 @@ nav ul li a:hover::after {
 
 /* About Section */
 #about {
-    padding: 8rem 0;
+    padding: var(--section-spacing) 0;
     background-color: var(--color-white);
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .about-text p {
@@ -216,18 +239,9 @@ nav ul li a:hover::after {
     margin-bottom: 1.5rem;
 }
 
-.image-container {
-    width: 100%;
-    height: 400px;
-    background-color: var(--color-gray-light);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
-
 /* Skills Section */
 #skills {
-    padding: 8rem 0;
+    padding: var(--section-spacing) 0;
     background-color: var(--color-gray-light);
 }
 
@@ -244,6 +258,7 @@ nav ul li a:hover::after {
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: var(--transition-smooth);
+    text-align: center;
 }
 
 .skill-card:hover {
@@ -256,92 +271,10 @@ nav ul li a:hover::after {
     margin-bottom: 1rem;
 }
 
-/* Projects Section */
-#projects {
-    padding: 8rem 0;
-    background-color: var(--color-white);
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
-}
-
-.project-card {
-    background-color: var(--color-white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: var(--transition-smooth);
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.project-image {
-    width: 100%;
-    height: 200px;
-    background-color: var(--color-gray-light);
-    background-size: cover;
-    background-position: center;
-}
-
-.project-image-1 {
-    background-image: url('https://placehold.co/600x400/f5f5f7/333333?text=TaskMaster');
-}
-
-.project-image-2 {
-    background-image: url('https://placehold.co/600x400/f5f5f7/333333?text=Dia');
-}
-
-.project-image-3 {
-    background-image: url('https://placehold.co/600x400/f5f5f7/333333?text=Portfolio');
-}
-
-.project-card h3, .project-card p {
-    padding: 0 1.5rem;
-}
-
-.project-card h3 {
-    margin-top: 1.5rem;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 1.5rem 1.5rem;
-}
-
-.project-link {
-    display: inline-block;
-    font-weight: 500;
-    color: var(--color-black);
-    position: relative;
-}
-
-.project-link::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-black);
-    transition: var(--transition-smooth);
-}
-
-.project-link:hover::after {
-    width: 100%;
-}
-
 /* Contact Section */
 #contact {
-    padding: 8rem 0;
-    background-color: var(--color-gray-light);
+    padding: var(--section-spacing) 0;
+    background-color: var(--color-white);
 }
 
 .contact-content {
@@ -378,7 +311,7 @@ input, textarea {
     padding: 1rem;
     border: 2px solid transparent;
     border-radius: 5px;
-    background-color: var(--color-white);
+    background-color: var(--color-gray-light);
     font-family: var(--font-primary);
     font-size: 1rem;
     transition: var(--transition-smooth);
@@ -435,6 +368,10 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    :root {
+        --section-spacing: 80px;
+    }
+    
     h1 {
         font-size: 3rem;
     }
@@ -443,7 +380,6 @@ footer {
         font-size: 2rem;
     }
     
-    .about-content,
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -456,3 +392,25 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    header {
+        padding: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
