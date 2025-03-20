@@ -8,16 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="icon" href="https://pplx-res.cloudinary.com/image/upload/v1742433922/user_uploads/xbySQhYBNVklwUA/image.jpg" type="image/jpeg">
 </head>
 <body>
     <div class="cursor"></div>
     <header>
-        <div class="logo">Moumen</div>
+        <div class="logo"><a href="javascript:void(0);" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Moumen</a></div>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -90,15 +91,15 @@
                         </div>
                     </div>
                 </div>
-                <form id="contact-form">
+                <form id="contact-form" action="https://formspree.io/f/movejpzg" method="POST">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" placeholder="Your Message" required></textarea>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="btn primary">Send Message</button>
                 </form>
@@ -109,10 +110,9 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Moumen</div>
+                <div class="footer-logo"><a href="javascript:void(0);" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Moumen</a></div>
                 <div class="footer-social">
                     <a href="https://github.com/moumen404" target="_blank" class="social-link">GitHub</a>
-                    <a href="https://linkedin.com/in/moumenettaibi" target="_blank" class="social-link">LinkedIn</a>
                     <a href="https://x.com/moumenettaibi" target="_blank" class="social-link">X</a>
                     <a href="https://instagram.com/moumenettaibi" target="_blank" class="social-link">Instagram</a>
                     <a href="https://facebook.com/moumenettaibi" target="_blank" class="social-link">Facebook</a>
