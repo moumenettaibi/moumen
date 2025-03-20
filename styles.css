@@ -214,29 +214,9 @@ nav ul li a:hover::after {
 }
 
 .about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-}
-
-.profile-icon {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 2rem;
-}
-
-.profile-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
 }
 
 /* Skills Section */
@@ -354,10 +334,22 @@ footer {
 .social-link {
     color: var(--color-white);
     transition: var(--transition-smooth);
+    position: relative;
 }
 
-.social-link:hover {
-    color: var(--color-gray);
+.social-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: var(--transition-smooth);
+}
+
+.social-link:hover::after {
+    width: 100%;
 }
 
 .footer-bottom {
