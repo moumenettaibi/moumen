@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Your Blog Platform{% endblock %}
+
+{% block content %}
+<!-- Membership Banner -->
+<div class="membership-banner">
+    <span class="star-icon">★</span>
+    <span class="banner-text">Get unlimited access to the best of Medium for less than $1/week.</span>
+    <a href="#" class="banner-link">Become a member</a>
+    <button class="banner-close">×</button>
+</div>
+
+<!-- Top navigation tabs -->
+<div class="tabs-container">
+    <div class="tabs">
+        <a href="#" class="tab active">For you</a>
+        <a href="#" class="tab">Following</a>
+        <a href="#" class="tab">Featured</a>
+        <a href="#" class="tab">Self Improvement</a>
+        <a href="#" class="tab">Data Science</a>
+        <a href="#" class="tab">Culture</a>
+        <a href="#" class="tab"><i class="fas fa-chevron-right"></i></a>
+    </div>
+</div>
+
+<!-- Main content area -->
+<div class="main-content">
+    <!-- Left column: Posts -->
+    <div class="posts-column">
+        {% if posts %}
+            {% for post in posts %}
+            <div class="post">
+                <div class="post-meta">
+                    <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Author" class="author-image">
+                    <div class="author-info">
+                        <span class="author-name">Author Name</span>
+                        <span class="publication">in Publication Name</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title"><a href="{{ url_for('post', id=post.id) }}">{{ post.title }}</a></h2>
+                    <p class="post-excerpt">{{ post.content[:150] }}{% if post.content|length > 150 %}...{% endif %}</p>
+                </div>
+                <div class="post-footer">
+                    <span class="post-date">{{ post.created|format_date }}</span>
+                    <span class="post-read-time">5 min read</span>
+                    <div class="post-actions">
+                        <button class="action-btn"><i class="far fa-bookmark"></i></button>
+                        <button class="action-btn"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-posts">
+                <p>No posts yet. {% if session.user_id and is_admin %}<a href="{{ url_for('create') }}">Create your first post</a>.{% endif %}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Right column: Sidebar -->
+    <div class="sidebar">
+        <!-- Staff Picks Section -->
+        <div class="sidebar-section">
+            <h3 class="section-title">Staff Picks</h3>
+            <div class="staff-picks">
+                <div class="staff-pick">
+                    <div class="pick-author">
+                        <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Author" class="author-image-small">
+                        <span class="author-name-small">Jasmine Mooney</span>
+                    </div>
+                    <h4 class="pick-title">You're Not a Criminal, But You're Going to Jail: My ICE Detention Story as a Canadian Citizen</h4>
+                    <span class="pick-date">2d ago</span>
+                </div>
+                <div class="staff-pick">
+                    <div class="pick-author">
+                        <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Author" class="author-image-small">
+                        <span class="author-name-small">Cole Haddon</span>
+                    </div>
+                    <h4 class="pick-title">In the Writers' Room Where It Happened: 'Twin Peaks'</h4>
+                    <span class="pick-date">Mar 9</span>
+                </div>
+                <div class="staff-pick">
+                    <div class="pick-author">
+                        <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Author" class="author-image-small">
+                        <span class="author-name-small">The Medium Newsletter</span>
+                    </div>
+                    <h4 class="pick-title">Good art moves culture forward</h4>
+                    <span class="pick-date">2d ago</span>
+                </div>
+            </div>
+            <div class="see-more">
+                <a href="#">See the full list</a>
+            </div>
+        </div>
+
+        <!-- Recommended Topics Section -->
+        <div class="sidebar-section">
+            <h3 class="section-title">Recommended topics</h3>
+            <div class="topic-tags">
+                <a href="#" class="topic-tag">Self Improvement</a>
+                <a href="#" class="topic-tag">Machine Learning</a>
+                <a href="#" class="topic-tag">Writing</a>
+                <a href="#" class="topic-tag">Relationships</a>
+                <a href="#" class="topic-tag">Politics</a>
+                <a href="#" class="topic-tag">Health</a>
+                <a href="#" class="topic-tag">Python</a>
+            </div>
+            <div class="see-more">
+                <a href="#">See more topics</a>
+            </div>
+        </div>
+
+        <!-- Who to Follow Section -->
+        <div class="sidebar-section">
+            <h3 class="section-title">Who to follow</h3>
+            <div class="follow-suggestions">
+                <div class="follow-suggestion">
+                    <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Author" class="author-image">
+                    <div class="suggestion-info">
+                        <span class="suggestion-name">Alex Rowe</span>
+                        <p class="suggestion-bio">I post commentary about gaming, tech, and sometimes philosophy.</p>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Close membership banner
+    const bannerClose = document.querySelector('.banner-close');
+    const banner = document.querySelector('.membership-banner');
+    
+    if (bannerClose && banner) {
+        bannerClose.addEventListener('click', function() {
+            banner.style.display = 'none';
+        });
+    }
+    
+    // Add Font Awesome if not already included
+    if (!document.querySelector('link[href*="font-awesome"]')) {
+        const fontAwesome = document.createElement('link');
+        fontAwesome.rel = 'stylesheet';
+        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+        document.head.appendChild(fontAwesome);
+    }
+});
+</script>
+{% endblock %}
