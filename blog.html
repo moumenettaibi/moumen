@@ -15,27 +15,24 @@
 </head>
 <body>
     <div class="cursor"></div>
-    <header>
-        <div class="logo"><a href="index.html">Moumen</a></div>
-        <nav>
-            <ul>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
+
+    <header id="header"> 
+        <div class="logo"><a href="javascript:void(0);" onclick="scrollToTop()" aria-label="Back to top">Moumen</a></div>
+        <nav aria-label="Main navigation">
+           
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-list">
+                <i class="fas fa-bars" aria-hidden="true"></i> 
+                <i class="fas fa-times" aria-hidden="true"></i> 
+            </button>
+            <ul id="main-nav-list">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-
-    <section id="blog-hero">
-        <div class="container">
-            <div class="blog-hero-content">
-                <h1>My Blog</h1>
-                <p class="subtitle">Thoughts, tutorials, and insights on web development - Student of Life's Journey</p>
-            </div>
-        </div>
-    </section>
 
     <section id="blog-content">
         <div class="container">
