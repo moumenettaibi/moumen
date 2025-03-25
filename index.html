@@ -65,8 +65,11 @@
 <body>
     <header>
         <div class="logo"><a href="javascript:void(0);" onclick="scrollToTop()" aria-label="Back to top">Moumen</a></div>
-        <nav aria-label="Main navigation">
-            <ul>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="primary-navigation" data-visible="false" aria-label="Main navigation">
+            <ul class="nav-list">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -75,6 +78,7 @@
             </ul>
         </nav>
     </header>
+    
 
     <main>
         <section id="hero">
