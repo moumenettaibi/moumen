@@ -208,4 +208,4 @@ def format_date(value, format='%B %d, %Y'):
     return value.strftime(format)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=6565)
