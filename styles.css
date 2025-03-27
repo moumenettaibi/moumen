@@ -1,4 +1,4 @@
-/* === styles.css (Enhanced - High Contrast Black Theme v3.3 - Blog & Footer Updated) === */
+/* === styles.css (Enhanced - High Contrast Black Theme v3.3 - Blog & Footer Updated with HugeIcons) === */
 
 /* --- General Reset & Base Setup --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,7 +13,7 @@ body.no-scroll { overflow: hidden; }
   --color-bg-light: #fdfdfd; --color-bg-medium: #f5f5f5;
   --color-text-primary: #0a0a0a; --color-text-secondary: #505050; --color-text-muted: #808080;
   --color-border-subtle: rgba(0, 0, 0, 0.1); --color-border-focus: var(--color-primary);
-  --color-success: #28a745; --color-error: #dc3545; /* Added for messages */
+  --color-success: #28a745; --color-error: #dc3545;
   --color-footer-bg: var(--color-primary); --color-footer-text: rgba(255, 255, 255, 0.8);
   --color-footer-text-hover: var(--color-white); --color-footer-border: rgba(255, 255, 255, 0.15);
   --bg-subtle-gradient: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-medium) 100%);
@@ -70,9 +70,11 @@ header.scrolled { background-color: rgba(255, 255, 255, 0.97); box-shadow: var(-
 .logo a { color: var(--color-primary); }
 .logo a:hover, .logo a:focus-visible { color: var(--color-primary); }
 
-/* --- Navigation --- */
+/* --- Navigation with HugeIcons --- */
 nav ul { display: flex; list-style: none; gap: 2.5rem; }
-nav ul li a { font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-wide); text-transform: uppercase; font-size: 0.8rem; position: relative; padding: 0.6rem 0.2rem; color: var(--color-primary); transition: color var(--transition-duration-fast) ease; }
+nav ul li a { font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-wide); text-transform: uppercase; font-size: 0.8rem; position: relative; padding: 0.6rem 0.2rem; color: var(--color-primary); transition: color var(--transition-duration-fast) ease; display: flex; align-items: center; gap: 0.5rem; }
+nav ul li a .hgi-stroke { font-size: 1.2rem; transition: transform var(--transition-duration-normal) var(--transition-easing); }
+nav ul li a:hover .hgi-stroke, nav ul li a:focus-visible .hgi-stroke { transform: scale(1.1); }
 nav ul li a::after { content: ''; position: absolute; bottom: 2px; left: 0; width: 0; height: 1.5px; background-color: var(--color-primary); transition: width var(--transition-duration-normal) var(--transition-easing); }
 nav ul li a:hover, nav ul li a.active, nav ul li a:focus-visible { color: var(--color-primary); }
 nav ul li a:hover::after, nav ul li a.active::after, nav ul li a:focus-visible::after { width: 100%; }
@@ -143,14 +145,14 @@ nav ul li a:hover::after, nav ul li a.active::after, nav ul li a:focus-visible::
 .project-image-wrapper { overflow: hidden; border-bottom: 1px solid var(--color-border-subtle); }
 .project-image { 
     width: 100%; 
-    height: 150px; /* Reduced from 230px to make images smaller */
+    height: 150px;
     object-fit: cover; 
     display: block; 
     transition: transform var(--transition-duration-slow) var(--transition-easing), filter var(--transition-duration-normal) ease; 
 }
 .project-card:hover .project-image, .project-card:focus-within .project-image { transform: scale(1.05); filter: brightness(1.03); }
 .project-info { 
-    padding: 1.8rem 2.2rem; /* Slightly reduced padding to balance layout */
+    padding: 1.8rem 2.2rem;
     flex-grow: 1; 
     display: flex; 
     flex-direction: column; 
@@ -170,48 +172,48 @@ input:focus-visible, textarea:focus-visible { outline: none; border-color: var(-
 textarea { min-height: 170px; resize: vertical; }
 .contact-form button[type="submit"].btn.primary { padding: 1.1rem 2.5rem; width: 100%; font-weight: var(--font-weight-semibold); }
 
-/* --- Blog Page Specific Styles (NEW / ENHANCED) --- */
+/* --- Blog Page Specific Styles --- */
 #blog-hero {
-  min-height: 40vh; /* Adjust height as needed */
+  min-height: 40vh;
   display: flex; align-items: center; justify-content: center; text-align: center;
-  padding: calc(var(--header-height) + 5rem) 1rem 5rem; /* Increased padding */
+  padding: calc(var(--header-height) + 5rem) 1rem 5rem;
   background: linear-gradient(145deg, var(--color-white) 0%, var(--color-bg-light) 100%);
   position: relative; border-bottom: 1px solid var(--color-border-subtle);
 }
 .blog-hero-content h1 { margin-bottom: 0.8rem; }
 .blog-hero-content .subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.4rem); /* Adjust size */
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   color: var(--color-text-secondary);
   max-width: 700px; margin: 0 auto;
   font-weight: var(--font-weight-light);
 }
 
 #blog-content {
-  padding: var(--section-spacing-md) 0; /* Use medium spacing */
+  padding: var(--section-spacing-md) 0;
   background-color: var(--color-white);
 }
 
 .coming-soon {
-  max-width: 800px; /* Constrain width */
-  margin: 2rem auto; /* Add top/bottom margin and center */
-  padding: 3rem 2.5rem; /* Generous padding */
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 3rem 2.5rem;
   background-color: var(--color-white);
-  border-radius: var(--border-radius-lg); /* Consistent radius */
+  border-radius: var(--border-radius-lg);
   text-align: center;
-  box-shadow: var(--shadow-lg); /* Use defined shadow */
+  box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-border-subtle);
 }
 .coming-soon-icon {
-  font-size: 3.5rem; /* Larger icon */
+  font-size: 3.5rem;
   margin-bottom: 2rem;
-  display: inline-block; /* Allow margin */
+  display: inline-block;
 }
 .coming-soon h2 {
     margin-bottom: 1.5rem;
 }
 .coming-soon p {
-    max-width: 600px; /* Constrain paragraph width */
-    margin-left: auto; margin-right: auto; /* Center paragraph */
+    max-width: 600px;
+    margin-left: auto; margin-right: auto;
     margin-bottom: 2.5rem;
     color: var(--color-text-secondary);
 }
@@ -219,7 +221,7 @@ textarea { min-height: 170px; resize: vertical; }
 .subscribe-section {
   margin-top: 3rem;
   padding-top: 2.5rem;
-  border-top: 1px solid var(--color-border-subtle); /* Separator line */
+  border-top: 1px solid var(--color-border-subtle);
 }
 .subscribe-section h3 {
     font-size: 1.2rem;
@@ -231,17 +233,16 @@ textarea { min-height: 170px; resize: vertical; }
 #subscribe-form .form-group {
   display: flex;
   gap: 1rem;
-  max-width: 550px; /* Max width for form group */
-  margin: 0 auto; /* Center form group */
-  align-items: center; /* Vertically align items */
+  max-width: 550px;
+  margin: 0 auto;
+  align-items: center;
 }
 
-/* Style the subscribe email input like contact inputs */
 #subscribe-email {
-  flex-grow: 1; /* Allow input to take available space */
-  padding: 0.9rem 1.2rem; /* Adjust padding */
+  flex-grow: 1;
+  padding: 0.9rem 1.2rem;
   border: 1px solid var(--color-border-subtle);
-  border-radius: var(--border-radius-pill); /* Pill shape to match button */
+  border-radius: var(--border-radius-pill);
   background-color: var(--color-white);
   font-family: var(--font-primary);
   font-size: 0.95rem;
@@ -255,13 +256,11 @@ textarea { min-height: 170px; resize: vertical; }
   box-shadow: var(--shadow-input-focus);
 }
 
-/* Style the subscribe button */
 #subscribe-button {
-  flex-shrink: 0; /* Prevent button from shrinking */
-  padding: 0.9rem 1.8rem; /* Adjust padding to visually match height */
+  flex-shrink: 0;
+  padding: 0.9rem 1.8rem;
 }
 
-/* Subscription Message Styling */
 .subscribe-message {
   margin-top: 1.5rem;
   padding: 0.8rem 1.2rem;
@@ -270,24 +269,24 @@ textarea { min-height: 170px; resize: vertical; }
   text-align: center;
   max-width: 550px;
   margin-left: auto; margin-right: auto;
-  display: none; /* Hidden by default */
+  display: none;
   transition: opacity 0.3s ease;
 }
 .subscribe-message:not(.hidden) {
-    display: block; /* Show when not hidden */
+    display: block;
 }
 .subscribe-message.success {
-  background-color: #e6f9ee; /* Light green */
+  background-color: #e6f9ee;
   color: var(--color-success);
   border: 1px solid rgba(40, 167, 69, 0.3);
 }
 .subscribe-message.error {
-  background-color: #fdeded; /* Light red */
+  background-color: #fdeded;
   color: var(--color-error);
   border: 1px solid rgba(220, 53, 69, 0.3);
 }
 
-/* --- Footer Section --- */
+/* --- Footer Section with HugeIcons --- */
 footer { 
   background-color: var(--color-footer-bg); 
   color: var(--color-footer-text); 
@@ -319,17 +318,36 @@ footer {
   gap: 2rem; 
 }
 
-/* Footer Social Links - Enhanced Light White Version */
 .social-link { 
-  color: #FFFFFF; /* Changed from var(--color-footer-text) to pure white */
-  transition: color var(--transition-duration-fast) ease; 
+  color: #FFFFFF; 
+  transition: color var(--transition-duration-fast) ease, transform var(--transition-duration-normal) var(--transition-easing); 
   font-size: 0.9rem; 
   text-transform: uppercase; 
   letter-spacing: 0.05em; 
   font-weight: var(--font-weight-medium); 
   position: relative; 
   padding-bottom: 4px; 
-  opacity: 0.95; /* Slightly reduced opacity for subtle effect */
+  opacity: 0.95; 
+  display: flex; 
+  align-items: center; 
+  gap: 0.5rem; 
+}
+
+.social-link .hgi-stroke { 
+  font-size: 1.3rem; 
+  transition: transform var(--transition-duration-normal) var(--transition-easing); 
+}
+
+.social-link:hover, 
+.social-link:focus-visible { 
+  color: #FFFFFF; 
+  opacity: 1; 
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4); 
+}
+
+.social-link:hover .hgi-stroke, 
+.social-link:focus-visible .hgi-stroke { 
+  transform: scale(1.1); 
 }
 
 .social-link::after { 
@@ -339,16 +357,9 @@ footer {
   left: 0; 
   width: 0; 
   height: 1.5px; 
-  background-color: #FFFFFF; /* Pure white for underline */
+  background-color: #FFFFFF; 
   transition: width var(--transition-duration-normal) var(--transition-easing); 
-  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
-}
-
-.social-link:hover, 
-.social-link:focus-visible { 
-  color: #FFFFFF; 
-  opacity: 1; /* Full opacity on hover */
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4); /* Soft glow effect on hover */
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); 
 }
 
 .social-link:hover::after, 
@@ -356,7 +367,6 @@ footer {
   width: 100%; 
 }
 
-/* Footer Bottom - Centered Copyright Text */
 .footer-bottom {
   width: 100%;
   text-align: center;
@@ -373,215 +383,6 @@ footer {
   margin: 0 auto;
   display: inline-block;
   text-align: center;
-}
-
-
-
-/* === styles.css (Additions for Keyboard Shortcuts Modal) === */
-
-/* --- Keyboard Shortcuts Button --- */
-.shortcuts-button {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    border-radius: 50%;
-    font-size: 1.2rem; /* Adjust icon size */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: var(--shadow-md);
-    z-index: 990; /* Below modal and overlay */
-    transition: var(--transition-smooth);
-    transition-property: background-color, transform, box-shadow;
-}
-
-.shortcuts-button:hover,
-.shortcuts-button:focus-visible {
-    background-color: var(--color-primary-hover);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: var(--shadow-lg);
-    outline: none; /* Remove default outline, focus handled by :focus-visible */
-}
-
-/* Specific focus-visible style if needed, e.g., stronger ring */
-.shortcuts-button:focus-visible {
-     box-shadow: var(--shadow-lg), 0 0 0 3px rgba(0, 0, 0, 0.2); /* Combine hover shadow with focus ring */
-}
-
-.shortcuts-button i {
-    line-height: 1; /* Helps center FontAwesome icons */
-}
-
-
-/* --- Keyboard Shortcuts Modal & Overlay --- */
-.shortcuts-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-    z-index: 1000; /* Above most content, below modal */
-    opacity: 0;
-    visibility: hidden; /* Use visibility for better performance/accessibility */
-    transition: opacity var(--transition-duration-normal) ease, visibility 0s var(--transition-duration-normal) linear;
-}
-
-.shortcuts-overlay.visible {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s; /* Remove delay when becoming visible */
-}
-
-.shortcuts-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.95); /* Start slightly smaller/offset */
-    background-color: var(--color-white);
-    color: var(--color-text-primary);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-xl);
-    z-index: 1001; /* Above overlay */
-    width: 90%;
-    max-width: 450px; /* Adjust max width as needed */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-duration-normal) var(--transition-easing),
-                transform var(--transition-duration-normal) var(--transition-easing),
-                visibility 0s var(--transition-duration-normal) linear;
-    overflow: hidden; /* Ensure content stays within rounded corners */
-}
-
-.shortcuts-modal.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) scale(1); /* End at center/full size */
-    transition-delay: 0s;
-}
-
-.shortcuts-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid var(--color-border-subtle);
-    background-color: var(--color-bg-light); /* Subtle background for header */
-}
-
-.shortcuts-modal-title {
-    font-size: 1.25rem;
-    font-weight: var(--font-weight-semibold);
-    margin: 0; /* Reset margin */
-    color: var(--color-primary);
-}
-
-.shortcuts-modal-close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    padding: 0.25rem; /* Make click area slightly larger */
-    line-height: 1;
-    transition: color var(--transition-duration-fast) ease;
-}
-
-.shortcuts-modal-close:hover,
-.shortcuts-modal-close:focus-visible {
-    color: var(--color-primary);
-    outline: none; /* Remove default outline */
-}
-.shortcuts-modal-close:focus-visible {
-    box-shadow: var(--shadow-focus-ring); /* Add focus ring */
-    border-radius: var(--border-radius-sm);
-}
-
-
-.shortcuts-modal-body {
-    padding: 2rem;
-}
-
-.shortcuts-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem 0;
-}
-
-.shortcuts-list li {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 0.8rem; /* Space between kbd and text */
-}
-
-.shortcuts-list li:last-child {
-    margin-bottom: 0;
-}
-
-/* Moved kbd styling to inline <style> in HTML head for simplicity,
-   but you can keep it here if preferred */
-/*
-kbd {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.2em 0.5em;
-    font-family: monospace;
-    font-size: 0.9em;
-    color: var(--color-text-primary);
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    display: inline-block;
-}
-*/
-
-.shortcuts-note {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    margin-top: 1.5rem;
-    text-align: center;
-    border-top: 1px dashed var(--color-border-subtle);
-    padding-top: 1.5rem;
-}
-
-/* --- Responsive Adjustments for Modal/Button --- */
-@media (max-width: 576px) {
-    .shortcuts-button {
-        bottom: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-
-    .shortcuts-modal {
-        max-width: calc(100% - 30px); /* Ensure padding from screen edges */
-    }
-
-    .shortcuts-modal-header {
-        padding: 1rem 1.5rem;
-    }
-    .shortcuts-modal-title {
-        font-size: 1.1rem;
-    }
-    .shortcuts-modal-close {
-        font-size: 1.3rem;
-    }
-    .shortcuts-modal-body {
-        padding: 1.5rem;
-    }
-     .shortcuts-list li {
-        font-size: 0.95rem;
-        gap: 0.6rem;
-    }
 }
 
 /* --- Responsive Design --- */
@@ -601,18 +402,19 @@ kbd {
   nav ul { position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height)); background-color: var(--color-white); flex-direction: column; align-items: center; justify-content: flex-start; padding: 4rem 1rem 2rem; gap: 1.5rem; transform: translateX(-100%); transition: transform var(--transition-duration-normal) var(--transition-easing); overflow-y: auto; z-index: 99; border-top: 1px solid var(--color-border-subtle); box-shadow: var(--shadow-lg); }
   nav ul.active { transform: translateX(0); }
   nav ul li a { font-size: 1.2rem; padding: 0.8rem 1rem; font-weight: var(--font-weight-regular); color: var(--color-primary); }
+  nav ul li a .hgi-stroke { font-size: 1.5rem; }
   nav ul li a::after { display: none; }
   .footer-content { flex-direction: column; text-align: center; gap: 2.5rem; }
+  .footer-social { flex-wrap: wrap; justify-content: center; }
   .projects-grid { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
   .project-info { padding: 1.8rem 2rem; }
   .skills-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .skill-card { padding: 2.5rem 1.5rem; }
   .contact-form { padding: 2.5rem; max-width: 90%; }
-  /* Blog Responsive */
   #blog-hero { padding: calc(var(--header-height) + 3rem) 1rem 3rem; }
   .coming-soon { padding: 2.5rem 1.5rem; }
-  #subscribe-form .form-group { flex-direction: column; align-items: stretch; } /* Stack form elements */
-  #subscribe-button { width: 100%; } /* Full width button */
+  #subscribe-form .form-group { flex-direction: column; align-items: stretch; }
+  #subscribe-button { width: 100%; }
 }
 @media (max-width: 576px) { /* Mobile Portrait */
   :root { --section-spacing-lg: 80px; }
@@ -624,12 +426,14 @@ kbd {
   .contact-form { padding: 2rem 1.5rem; }
   #hero { padding: 4rem 1rem; }
   .tagline { margin-bottom: 2.5rem; }
-  .project-image { height: 140px; } /* Even smaller on mobile */
-  /* Blog Responsive */
+  .project-image { height: 140px; }
   .coming-soon { padding: 2rem 1rem; }
   .coming-soon h2 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
 }
-
+.hgi-twotone.hgi-new-twitter {
+  color: #FFFFFF; /* Primary color */
+  --hgi-secondary: #FFFFFF; /* Secondary color, if supported by HugeIcons */
+}
 /* --- Animations --- */
 @keyframes spin { to { transform: rotate(360deg); } }
 .spinner { display: inline-block; width: 1em; height: 1em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; vertical-align: middle; margin-left: 0.5em; }

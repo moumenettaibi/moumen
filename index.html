@@ -33,7 +33,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg" type="image/jpeg">
-    <!-- Font Awesome CDN -->
+    <!-- HugeIcons CDN (Stroke Rounded) -->
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
+    <!-- HugeIcons Twotone CDN (optional, kept for compatibility) -->
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-twotone.css">
+    <!-- Font Awesome CDN (kept for menu toggle) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Structured Data / Schema.org -->
@@ -72,7 +76,6 @@
 </head>
 <body>
     <header id="header">
-        <!-- Changed href to #top, removed onclick -->
         <div class="logo"><a href="#top" aria-label="Back to top">Moumen</a></div>
         <nav aria-label="Main navigation">
             <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-list">
@@ -80,12 +83,11 @@
                 <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             <ul id="main-nav-list">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-
+                <li><a href="#about" class="nav-link"><i class="hgi-stroke hgi-user"></i> About</a></li>
+                <li><a href="#skills" class="nav-link"><i class="hgi-stroke hgi-certificate-01"></i> Skills</a></li>
+                <li><a href="#projects" class="nav-link"><i class="hgi-stroke hgi-folder-01"></i> Projects</a></li>
+                <li><a href="#contact" class="nav-link"><i class="hgi hgi-stroke hgi-mail-02"></i> Contact</a></li>
+                <li><a href="blog.html" class="nav-link"><i class="hgi-stroke hgi-license"></i> Blog</a></li>
             </ul>
         </nav>
     </header>
@@ -111,7 +113,7 @@
                 <div class="about-content">
                     <p>Web developer from Fez with a passion for digital craftsmanship. I create responsive, user-friendly websites where functionality meets elegance.</p>
                     <p>Clean code, intuitive interfaces, and cutting-edge solutions are my specialty.</p>
-                    <p>Always evolving, always delivering, and always a student of life, learning and growing with every project.</p>
+                    <span>Always evolving, always progressing.</span>
                 </div>
             </div>
         </section>
@@ -124,32 +126,21 @@
                 <div class="skills-grid">
                     <div class="skill-card">
                         <div class="skill-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="custom-icon">
-                                <path d="M18 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"></path>
-                                <polyline points="8 10 12 14 16 10"></polyline>
-                                <line x1="12" y1="4" x2="12" y2="14"></line>
-                            </svg>
+                            <i class="hgi hgi-stroke hgi-web-design-01"></i>
                         </div>
                         <h3>Frontend Development</h3>
                         <p>Expert in HTML5, CSS3, JavaScript, React, Next.js, and Tailwind CSS for creating responsive and interactive user interfaces.</p>
                     </div>
                     <div class="skill-card">
                         <div class="skill-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="custom-icon">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
+                            <i class="hgi hgi-stroke hgi-web-programming"></i>
                         </div>
                         <h3>Backend Development</h3>
                         <p>Proficient in Node.js, Express, Python, and building secure, scalable RESTful APIs for modern web applications.</p>
                     </div>
                     <div class="skill-card">
                         <div class="skill-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="custom-icon">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                            </svg>
+                            <i class="hgi hgi-stroke hgi-settings-05"></i>
                         </div>
                         <h3>Development Tools & Best Practices</h3>
                         <p>Experienced with Git, GitHub, VS Code, responsive design principles, and web performance optimization techniques.</p>
@@ -167,7 +158,7 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image-wrapper">
-                             <img src="image.png" alt="Project Dia" class="project-image">
+                            <img src="image.png" alt="Project Dia" class="project-image">
                         </div>
                         <div class="project-info">
                             <h3>Dia</h3>
@@ -178,9 +169,9 @@
                         </div>
                     </div>
                     <div class="project-card">
-                         <div class="project-image-wrapper">
+                        <div class="project-image-wrapper">
                             <img src="image.png" alt="Project Dia Task Manager" class="project-image">
-                         </div>
+                        </div>
                         <div class="project-info">
                             <h3>Dia - Task Manager</h3>
                             <p class="project-description">Task Manager AI is a powerful web application that helps you organize your tasks and goals with AI assistance.</p>
@@ -210,11 +201,9 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Get In Touch</h2>
-                    <!-- Optional: Add a short subtitle here if needed -->
                     <p class="section-subtitle">Have a question? Send me a message!</p>
                 </div>
                 <div class="contact-content">
-                    <!-- Contact Info Removed -->
                     <form id="contact-form" action="https://formspree.io/f/movejpzg" method="POST" class="contact-form">
                         <div class="form-group">
                             <label for="name" class="visually-hidden">Your Name</label>
@@ -238,13 +227,12 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <!-- Changed href to #top, removed onclick -->
                 <div class="footer-logo"><a href="#top" aria-label="Back to top">Moumen</a></div>
                 <div class="footer-social">
-                    <a href="https://github.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
-                    <a href="https://x.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link">X</a>
-                    <a href="https://instagram.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
-                    <a href="https://facebook.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+                    <a href="https://github.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-github"></i></a>
+                    <a href="https://x.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-new-twitter"></i></a>
+                    <a href="https://instagram.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-instagram"></i></a>
+                    <a href="https://facebook.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-facebook-01"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -255,7 +243,7 @@
 
     <!-- Ensure EmailJS SDK is included -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <!-- Your script file (containing the keyboard navigation logic) -->
+    <!-- Your script file -->
     <script src="script.js"></script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'926ad46f6b9e4531',t:'MTc0MzAzNTk1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'926b097fdabdbcf8',t:'MTc0MzAzODEzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
