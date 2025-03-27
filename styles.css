@@ -78,11 +78,11 @@ nav ul li a:hover .hgi-stroke, nav ul li a:focus-visible .hgi-stroke { transform
 nav ul li a::after { content: ''; position: absolute; bottom: 2px; left: 0; width: 0; height: 1.5px; background-color: var(--color-primary); transition: width var(--transition-duration-normal) var(--transition-easing); }
 nav ul li a:hover, nav ul li a.active, nav ul li a:focus-visible { color: var(--color-primary); }
 nav ul li a:hover::after, nav ul li a.active::after, nav ul li a:focus-visible::after { width: 100%; }
-.menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; padding: 0.5rem; color: black; z-index: 110; transition: color var(--transition-duration-fast) ease, transform var(--transition-duration-normal) ease; }
-.menu-toggle:hover { color: black; }
-.menu-toggle .fa-times { display: none; }
-.menu-toggle.active .fa-bars { display: none; }
-.menu-toggle.active .fa-times { display: block; }
+.menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; padding: 0.5rem; color: var(--color-primary); z-index: 110; transition: color var(--transition-duration-fast) ease, transform var(--transition-duration-normal) ease; }
+.menu-toggle:hover { color: var(--color-primary-hover); }
+.menu-toggle .hgi-cancel-01 { display: none; }
+.menu-toggle.active .hgi-menu-02 { display: none; }
+.menu-toggle.active .hgi-cancel-01 { display: inline-block; }
 .menu-toggle.active { transform: rotate(180deg); }
 
 /* --- Hero Section --- */
