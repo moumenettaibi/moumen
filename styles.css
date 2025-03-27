@@ -1,4 +1,4 @@
-/* === styles.css (Enhanced - High Contrast Black Theme v3.3 - Blog & Footer Updated with HugeIcons) === */
+/* === styles.css (Enhanced - High Contrast Black Theme v3.3 - Blog & Footer Updated with HugeIcons, Updated Subscribe Form) === */
 
 /* --- General Reset & Base Setup --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -240,25 +240,52 @@ textarea { min-height: 170px; resize: vertical; }
 
 #subscribe-email {
   flex-grow: 1;
-  padding: 0.9rem 1.2rem;
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--border-radius-pill);
+  padding: 1.2rem 1.4rem; /* Matches contact form input padding */
+  border: 1px solid var(--color-border-subtle); /* Matches contact form border */
+  border-radius: var(--border-radius-md); /* Matches contact form border-radius */
   background-color: var(--color-white);
   font-family: var(--font-primary);
-  font-size: 0.95rem;
-  font-weight: var(--font-weight-regular);
+  font-size: 1rem; /* Matches contact form font-size */
+  font-weight: var(--font-weight-regular); /* Matches contact form font-weight */
   color: var(--color-text-primary);
   transition: border-color var(--transition-duration-fast) ease, box-shadow var(--transition-duration-fast) ease;
 }
-#subscribe-email::placeholder { color: var(--color-text-muted); opacity: 0.7; }
+#subscribe-email::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7; /* Matches contact form placeholder opacity */
+}
 #subscribe-email:focus-visible {
-  outline: none; border-color: var(--color-border-focus);
-  box-shadow: var(--shadow-input-focus);
+  outline: none;
+  border-color: var(--color-border-focus); /* Matches contact form focus border */
+  box-shadow: var(--shadow-input-focus); /* Matches contact form focus shadow */
 }
 
 #subscribe-button {
   flex-shrink: 0;
-  padding: 0.9rem 1.8rem;
+  padding: 1.1rem 2.5rem; /* Matches contact form submit button padding */
+  border-radius: var(--border-radius-pill); /* Matches btn border-radius */
+  font-weight: var(--font-weight-semibold); /* Matches contact form submit button weight */
+  letter-spacing: var(--letter-spacing-wide); /* Matches btn letter-spacing */
+  text-transform: uppercase; /* Matches btn text-transform */
+  font-size: 0.85rem; /* Matches btn font-size */
+  background-color: var(--color-primary); /* Matches btn.primary background */
+  color: var(--color-white); /* Matches btn.primary color */
+  border: 1.5px solid var(--color-primary); /* Matches btn border */
+  transition: var(--transition-smooth); /* Matches btn transition */
+  transition-property: background-color, color, border-color, transform, box-shadow;
+  cursor: pointer;
+}
+#subscribe-button:hover,
+#subscribe-button:focus-visible {
+  background-color: var(--color-primary-hover); /* Matches btn.primary hover */
+  border-color: var(--color-primary-hover); /* Matches btn.primary hover */
+  transform: translateY(-3px); /* Matches btn.primary hover transform */
+  box-shadow: var(--shadow-md); /* Matches btn.primary hover shadow */
+}
+#subscribe-button:active {
+  transform: translateY(-1px) scale(0.98); /* Matches btn active transform */
+  box-shadow: var(--shadow-xs); /* Matches btn active shadow */
+  filter: brightness(95%); /* Matches btn active filter */
 }
 
 .subscribe-message {
@@ -383,6 +410,35 @@ footer {
   margin: 0 auto;
   display: inline-block;
   text-align: center;
+}
+
+/* Add this to your existing styles.css */
+
+/* Contact form notification */
+.contact-message {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+.contact-message:not(.hidden) {
+  display: block;
+}
+.contact-message.success {
+  background-color: #e6f9ee;
+  color: var(--color-success);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+.contact-message.error {
+  background-color: #fdeded;
+  color: var(--color-error);
+  border: 1px solid rgba(220, 53, 69, 0.3);
 }
 
 /* --- Responsive Design --- */
