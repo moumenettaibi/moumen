@@ -493,3 +493,208 @@ footer {
 /* --- Animations --- */
 @keyframes spin { to { transform: rotate(360deg); } }
 .spinner { display: inline-block; width: 1em; height: 1em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; vertical-align: middle; margin-left: 0.5em; }
+
+
+/* === Add these styles to your existing styles.css file === */
+/* === Typically add them near related sections like .projects-grid or before @media queries === */
+
+/* --- Blog Page Specific Styles --- */
+
+/* Remove specific blog hero styles if you want the standard section padding */
+/* Or adjust as needed */
+/*
+#blog-hero {
+  min-height: 40vh;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: calc(var(--header-height) + 5rem) 1rem 5rem;
+  background: linear-gradient(145deg, var(--color-white) 0%, var(--color-bg-light) 100%);
+  position: relative; border-bottom: 1px solid var(--color-border-subtle);
+}
+.blog-hero-content h1 { margin-bottom: 0.8rem; }
+.blog-hero-content .subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--color-text-secondary);
+  max-width: 700px; margin: 0 auto;
+  font-weight: var(--font-weight-light);
+}
+*/
+
+#blog-content {
+  padding: var(--section-spacing-lg) 0; /* Use standard section padding */
+  background-color: var(--color-white);
+}
+
+/* Blog Grid Layout */
+.blog-grid {
+    display: grid;
+    /* Adjust minmax for desired card width */
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: var(--grid-gap);
+    margin-top: 4rem; /* Space below section header */
+}
+
+/* Individual Blog Post Card Styling */
+.blog-post-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg); /* Consistent with project cards */
+    overflow: hidden;
+    box-shadow: var(--shadow-md); /* Consistent with project cards */
+    transition: transform var(--transition-duration-normal) var(--transition-easing), box-shadow var(--transition-duration-normal) var(--transition-easing);
+    border: 1px solid var(--color-border-subtle);
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-card:hover,
+.blog-post-card:focus-within {
+    transform: translateY(-12px) scale(1.02); /* Consistent hover effect */
+    box-shadow: var(--shadow-xl);
+}
+
+/* Blog Post Image Placeholder/Wrapper */
+.blog-post-image-wrapper {
+    height: 190px; /* Adjust height as needed */
+    overflow: hidden;
+    background-color: var(--color-bg-medium); /* Placeholder background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+    position: relative; /* For potential image overlay effects later */
+}
+
+.blog-post-image-wrapper img { /* Style if using actual images */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-duration-slow) var(--transition-easing);
+}
+
+.blog-post-card:hover .blog-post-image-wrapper img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Blog Post Content Area */
+.blog-post-info {
+    padding: 1.8rem 2.2rem; /* Consistent padding */
+    flex-grow: 1; /* Allows 'Read More' to stick to bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Metadata (Date, Read Time) */
+.blog-post-meta {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Post Title */
+.blog-post-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem; /* Slightly smaller than project titles? Adjust as needed */
+    color: var(--color-primary);
+    line-height: 1.4;
+    font-weight: var(--font-weight-semibold); /* Make title stand out */
+}
+
+.blog-post-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-duration-fast) ease;
+}
+
+.blog-post-title a:hover,
+.blog-post-title a:focus-visible {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+
+/* Post Excerpt */
+.blog-post-excerpt {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes 'Read More' down */
+    line-height: 1.65;
+}
+
+/* "Read More" Link */
+.read-more-link {
+    display: inline-block;
+    margin-top: auto; /* Pushes to bottom */
+    padding-top: 1rem; /* Space above link */
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    text-decoration: none;
+    transition: color var(--transition-duration-fast) ease, transform var(--transition-duration-fast) ease;
+}
+
+.read-more-link i { /* Style for the arrow icon */
+    transition: transform var(--transition-duration-fast) ease;
+    display: inline-block; /* Prevents icon wrapping */
+}
+
+.read-more-link:hover,
+.read-more-link:focus-visible {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+
+.read-more-link:hover i,
+.read-more-link:focus-visible i {
+    transform: translateX(4px); /* Subtle arrow movement */
+}
+
+/* Adjust Subscribe Section Spacing on Blog Page */
+#blog-content .subscribe-section {
+  margin-top: 5rem; /* More space after the blog posts */
+  padding-top: 3rem; /* More space above the heading */
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* --- Add Responsive Adjustments within existing @media queries --- */
+
+@media (max-width: 992px) { /* Tablet */
+  /* Adjust grid gap if needed */
+  .blog-grid { gap: 2.5rem; }
+}
+
+@media (max-width: 768px) { /* Mobile Landscape / Small Tablet */
+  .blog-grid {
+      grid-template-columns: 1fr; /* Stack cards on smaller screens */
+      gap: 2.5rem; /* Adjust gap for stacked cards */
+   }
+   .blog-post-info { padding: 1.8rem 2rem; }
+
+   #blog-content .subscribe-section { margin-top: 4rem; }
+}
+
+@media (max-width: 576px) { /* Mobile Portrait */
+   .blog-post-title { font-size: 1.3rem; }
+   .blog-post-info { padding: 1.5rem; }
+   .blog-post-image-wrapper { height: 160px; }
+}
+
+
+/* Remove the old coming-soon styles if they are no longer needed */
+/*
+.coming-soon { ... }
+.coming-soon-icon { ... }
+*/
+
+/* Ensure subscribe form styles are still correct, looks like they are reused well */
+/* --- End of additions to styles.css --- */

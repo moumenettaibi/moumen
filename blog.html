@@ -3,83 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Moumen Et-taibi - Student of Life</title>
+
+    <!-- SEO Meta Tags for Blog -->
+    <title>Blog | Moumen Et-taibi - Thoughts on Web Development & Life</title>
+    <meta name="description" content="Explore articles and insights from Moumen Et-taibi on full-stack web development, modern technologies like React and Node.js, coding practices, and reflections as a student of life.">
+    <meta name="keywords" content="web development blog, coding tutorials, React, Node.js, JavaScript, full-stack development, programming insights, Moumen Et-taibi blog">
+    <meta name="author" content="Moumen Et-taibi">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Blog | Moumen Et-taibi - Thoughts on Web Development & Life">
+    <meta property="og:description" content="Articles on web development, coding, and learning from Moumen Et-taibi.">
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg"> <!-- Consider a blog-specific image later -->
+    <meta property="og:url" content="https://moumenettaibi.github.io/blog.html">
+    <meta property="og:type" content="website"> <!-- Technically 'article' might apply to posts, 'website' or 'blog' is fine for the listing -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | Moumen Et-taibi - Thoughts on Web Development & Life">
+    <meta name="twitter:description" content="Articles on web development, coding, and learning from Moumen Et-taibi.">
+    <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://moumenettaibi.github.io/blog.html">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg" type="image/jpeg">
+    <!-- HugeIcons CDN (Stroke Rounded) -->
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
+    <!-- HugeIcons Solid CDN (for menu icon toggle - though stroke is used) -->
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-solid.css">
+    <!-- HugeIcons Twotone CDN (optional) -->
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-twotone.css">
+    <!-- Font Awesome CDN (Optional fallback or specific icons if needed) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="./styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="icon" href="https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg" type="image/jpeg">
-        <!-- HugeIcons CDN (Stroke Rounded) -->
-        <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
-        <!-- HugeIcons Twotone CDN for X Icon -->
-        <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-twotone.css">
-        <!-- Font Awesome CDN (kept for menu toggle) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <!-- Add EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Visually hidden class style -->
+    <style>
+        .visually-hidden {
+            position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+            overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; white-space: nowrap;
+        }
+    </style>
 </head>
 <body>
-    <div class="cursor"></div>
-
-    <header id="header"> 
-        <div class="logo"><a href="index.html">Moumen</a></div>
+    <header id="header">
+        <div class="logo"><a href="index.html" aria-label="Back to homepage">Moumen</a></div>
         <nav aria-label="Main navigation">
-           
             <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-list">
                 <i class="hgi hgi-stroke hgi-menu-02" aria-hidden="true"></i>
                 <i class="hgi hgi-stroke hgi-cancel-01" aria-hidden="true"></i>
             </button>
             <ul id="main-nav-list">
-                <li><a href="index.html#about" class="nav-link"><i class="hgi hgi-stroke hgi-user"></i> About</a></li>
-                <li><a href="index.html#skills" class="nav-link"><i class="hgi hgi-stroke hgi-certificate-01"></i> Skills</a></li>
+                <li><a href="index.html#about" class="nav-link"><i class="hgi-stroke hgi-user"></i> About</a></li>
+                <li><a href="index.html#skills" class="nav-link"><i class="hgi-stroke hgi-certificate-01"></i> Skills</a></li>
                 <li><a href="index.html#projects" class="nav-link"><i class="hgi-stroke hgi-folder-01"></i> Projects</a></li>
-                <li><a href="index.html#contact" class="nav-link"><i class="hgi hgi-stroke hgi-mail-02"></i> Contact</a></li>
-                <li><a href="blog.html" class="active"><i class="hgi hgi-stroke hgi-license"></i> Blog</a></li>
+                <li><a href="index.html#contact" class="nav-link"><i class="hgi-stroke hgi-mail-02"></i> Contact</a></li>
+                <li><a href="blog.html" class="nav-link active"><i class="hgi-stroke hgi-license"></i> Blog</a></li> 
             </ul>
         </nav>
     </header>
 
-    <section id="blog-content">
-        <div class="container">
-            <div class="coming-soon">
-                <div class="coming-soon-icon">✍️</div>
-                <h2>Coming Soon</h2>
-                <p>I'm working on sharing my insights, experiences, and tutorials on web development. Stay tuned for articles on:</p>
+    <main>
+        <section id="blog-content">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Thoughts & Insights</h1>
+                    <p class="section-subtitle">Sharing my journey through web development, coding challenges, and life lessons learned along the way.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <!-- Placeholder Post 1 -->
+                    <article class="blog-post-card">
+                        <div class="blog-post-image-wrapper">
+                            <!-- Optional: <img src="path/to/image1.jpg" alt="Descriptive alt text"> -->
+                            <span>Image Placeholder</span>
+                        </div>
+                        <div class="blog-post-info">
+                            <span class="blog-post-meta">October 26, 2024 • 5 min read</span>
+                            <h3 class="blog-post-title"><a href="blog/first-post-ideas.html">Exploring My First Blog Post Ideas</a></h3>
+                            <p class="blog-post-excerpt">Diving into potential topics for this blog, from technical deep dives into React hooks to reflections on the learning process as a developer.</p>
+                            <a href="blog/first-post-ideas.html" class="read-more-link">Read More <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true" style="font-size: 0.9em; vertical-align: middle;"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder Post 2 -->
+                    <article class="blog-post-card">
+                        <div class="blog-post-image-wrapper">
+                             <span>Image Placeholder</span>
+                        </div>
+                        <div class="blog-post-info">
+                            <span class="blog-post-meta">November 5, 2024 • 7 min read</span>
+                            <h3 class="blog-post-title"><a href="blog/why-student-of-life.html">Why "Student Of Life" Matters in Tech</a></h3>
+                            <p class="blog-post-excerpt">Beyond the code, the mindset of continuous learning is crucial. How embracing being a lifelong student shapes my approach to development and challenges.</p>
+                            <a href="blog/why-student-of-life.html" class="read-more-link">Read More <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true" style="font-size: 0.9em; vertical-align: middle;"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder Post 3 -->
+                    <article class="blog-post-card">
+                         <div class="blog-post-image-wrapper">
+                            <span>Image Placeholder</span>
+                        </div>
+                        <div class="blog-post-info">
+                            <span class="blog-post-meta">November 18, 2024 • 10 min read</span>
+                            <h3 class="blog-post-title"><a href="blog/building-dia-cli.html">Behind the Build: The Dia CLI Assistant</a></h3>
+                            <p class="blog-post-excerpt">A look into the development process, challenges, and learnings from creating 'Dia', my terminal-based AI assistant project. Exploring Node.js and AI integration.</p>
+                            <a href="blog/building-dia-cli.html" class="read-more-link">Read More <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true" style="font-size: 0.9em; vertical-align: middle;"></i></a>
+                        </div>
+                    </article>
+
+                     <!-- Add more placeholder posts as needed -->
+
+                </div>
+
+                <!-- Subscribe Section -->
                 <div class="subscribe-section">
-                    <h3>Get notified when new articles are published</h3>
+                    <h3>Stay Updated</h3>
+                    <p style="max-width: 550px; margin-left: auto; margin-right: auto; margin-bottom: 2rem; color: var(--color-text-secondary);">Get notified when new articles are published.</p>
                     <form id="subscribe-form">
                         <div class="form-group">
+                            <label for="subscribe-email" class="visually-hidden">Your Email</label>
                             <input type="email" id="subscribe-email" name="user_email" placeholder="Your Email" required>
                             <button type="submit" class="btn primary" id="subscribe-button">Subscribe</button>
                         </div>
                         <div id="subscribe-message" class="subscribe-message hidden"></div>
                     </form>
                 </div>
+
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><a href="index.html">Moumen</a></div>
+                <div class="footer-logo"><a href="index.html" aria-label="Back to homepage">Moumen</a></div>
                 <div class="footer-social">
-                    <a href="https://github.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-github"></i></a>
-                    <a href="https://x.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi hgi-stroke hgi-new-twitter"></i></a>
-                    <a href="https://instagram.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-instagram"></i></a>
-                    <a href="https://facebook.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-facebook-01"></i></a>
+                    <a href="https://github.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-github"></i><span class="visually-hidden">GitHub</span></a>
+                    <a href="https://x.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-new-twitter"></i><span class="visually-hidden">X (Twitter)</span></a>
+                    <a href="https://instagram.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-instagram"></i><span class="visually-hidden">Instagram</span></a>
+                    <a href="https://facebook.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-facebook-01"></i><span class="visually-hidden">Facebook</span></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Moumen Et-taibi. All rights reserved.</p>
+                <p>© <span id="current-year">2025</span> Moumen Et-taibi. All rights reserved.</p>
             </div>
         </div>
     </footer>
