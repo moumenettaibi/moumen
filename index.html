@@ -1,289 +1,39 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="2uQF6eohgw_qCPBnPazDtrVUgJI0_xAJVzLeXL60Ptk" />
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- SEO Meta Tags -->
-    <title>Moumen Et-taibi | Full-Stack Web Developer - Student of Life</title>
-    <meta name="description" content="Moumen Et-taibi is a skilled full-stack developer from Fez, Morocco specializing in responsive web design, React, Node.js and modern web technologies. Student of life, always learning and growing.">
-    <meta name="keywords" content="web developer, full-stack developer, Morocco developer, React developer, Node.js, Fez, student of life">
-    <meta name="author" content="Moumen Et-taibi">
+  <!-- Instant client-side redirect -->
+  <meta http-equiv="refresh" content="0; url=https://moumenettaibi.vercel.app/" />
 
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Moumen Et-taibi | Full-Stack Web Developer - Student of Life">
-    <meta property="og:description" content="Professional web developer creating responsive, user-friendly websites where functionality meets elegance. Student of life, dedicated to continuous learning.">
-    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg">
-    <meta property="og:url" content="https://moumenettaibi.github.io">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Moumen Et-taibi | Web Developer Portfolio - Student of Life">
-    <meta name="twitter:description" content="Full-stack developer specializing in creating modern, responsive web applications. Student of life, embracing challenges and new knowledge.">
-    <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://moumenettaibi.github.io">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg" type="image/jpeg">
-    <!-- HugeIcons CDN (Stroke Rounded) -->
-    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
-    <!-- HugeIcons Solid CDN (for menu icon) -->
-    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-solid.css">
-    <!-- HugeIcons Twotone CDN (optional, kept for compatibility) -->
-    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-twotone.css">
-    <!-- Font Awesome CDN (optional, kept but not required for menu toggle anymore) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-    <!-- Structured Data / Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Moumen Et-taibi",
-      "url": "https://moumenettaibi.github.io",
-      "image": "https://pbs.twimg.com/profile_images/1902446761928536064/CBeXLJR0_400x400.jpg",
-      "sameAs": [
-        "https://github.com/moumenettaibi",
-        "https://x.com/moumenettaibi",
-        "https://instagram.com/moumanettaibi",
-        "https://facebook.com/moumanettaibi"
-      ],
-      "jobTitle": "Full-Stack Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Freelance"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Fez",
-        "addressCountry": "Morocco"
+  <!-- Hint to crawlers about the preferred URL -->
+  <link rel="canonical" href="https://moumenettaibi.vercel.app/" />
+  
+  <!-- JS fallback that avoids adding this page to history -->
+  <script>
+    (function () {
+      var target = "https://moumenettaibi.vercel.app/";
+      if (window.location.href !== target) {
+        window.location.replace(target);
       }
-    }
-    </script>
-    <!-- Visually hidden class style -->
-    <style>
-        .visually-hidden {
-            position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
-            overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; white-space: nowrap;
-        }
-    </style>
+    })();
+  </script>
+
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; }
+    body { display: grid; place-items: center; background: #0b0b0b; color: #f3f3f3; }
+    a { color: #61dafb; text-decoration: underline; }
+    .card { max-width: 540px; padding: 24px; text-align: center; background: #141414; border: 1px solid #242424; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,.35); }
+    .small { opacity: .8; font-size: 14px; margin-top: 8px; }
+  </style>
 </head>
 <body>
-    <header id="header">
-        <div class="logo"><a href="#top" aria-label="Back to top">Moumen</a></div>
-        <nav aria-label="Main navigation">
-            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-list">
-                <i class="hgi hgi-stroke hgi-menu-02" aria-hidden="true"></i>
-                <i class="hgi hgi-stroke hgi-cancel-01" aria-hidden="true"></i>
-            </button>
-            <ul id="main-nav-list">
-                <li><a href="#about" class="nav-link"><i class="hgi-stroke hgi-user"></i> About</a></li>
-                <li><a href="#skills" class="nav-link"><i class="hgi-stroke hgi-certificate-01"></i> Skills</a></li>
-                <li><a href="#projects" class="nav-link"><i class="hgi-stroke hgi-folder-01"></i> Projects</a></li>
-                <li><a href="#contact" class="nav-link"><i class="hgi hgi-stroke hgi-mail-02"></i> Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h1>Moumen Et-taibi</h1>
-                <p class="subtitle">Full-Stack Web Developer</p>
-                <p class="tagline">Student Of Life</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn primary">My Projects</a>
-                    <a href="#contact" class="btn secondary">Get In Touch</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2>About Me</h2>
-                </div>
-                <div class="about-content">
-                    <p>Web developer from Fez with a passion for digital craftsmanship. I create responsive, user-friendly websites where functionality meets elegance.</p>
-                    <p>Clean code, intuitive interfaces, and cutting-edge solutions are my specialty.</p>
-                    <span>Always evolving, always progressing.</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Skills & Expertise</h2>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="hgi hgi-stroke hgi-web-design-01"></i>
-                        </div>
-                        <h3>Frontend Development</h3>
-                        <p>Expert in HTML5, CSS3, JavaScript, React, Next.js, and Tailwind CSS for creating responsive and interactive user interfaces.</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="hgi hgi-stroke hgi-web-programming"></i>
-                        </div>
-                        <h3>Backend Development</h3>
-                        <p>Proficient in Node.js, Express, Python, and building secure, scalable RESTful APIs for modern web applications.</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="hgi hgi-stroke hgi-settings-05"></i>
-                        </div>
-                        <h3>Development Tools & Best Practices</h3>
-                        <p>Experienced with Git, GitHub, VS Code, responsive design principles, and web performance optimization techniques.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Projects</h2>
-                    <p class="section-subtitle">Take a look at some of my latest projects.</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="https://i.ibb.co/81Fb3FY/SCR-20250725-ohry.jpg" alt="Project Dia Task Manager" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <h3>Newsify</h3>
-                        <p class="project-description">Newsify is an AI-powered news aggregator web app that fetches, summarizes, and translates global news in real time with a clean, user-friendly interface.</p>
-                        <div class="project-links">
-                            <a href="https://newsify-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-project">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="https://i.ibb.co/Mk7LncTw/SCR-20251007-paen.jpg" alt="Netflix Clone Website Screenshot" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <h3>Netflix (Clone)</h3>
-                        <p class="project-description">Netflix clone is a website with a sleek interface for browsing and streaming TV shows and movies, closely mimicking the Netflix experience.</p>
-                        <div class="project-links">
-                            <a href="https://netflix-dev.vercel.app/browse" target="_blank" rel="noopener noreferrer" class="btn btn-project">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://i.ibb.co/RTZqQcjC/SCR-20250725-oisy.png" alt="Project Teamgreekgods" class="project-image">
-                        </div>
-                        <div class="project-info">
-                            <h3>Teamgreekgods</h3>
-                            <p class="project-description">Teamgreekgods is a custom fitness web app developed for coach Abdeslam Laraki—delivers personalized training plans and nutrition guidance for his clients with expert support.</p>
-                            <div class="project-links">
-                                <a href="https://teamgreekgods.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-project">Live Demo</a>
-                            </div>
-                        </div>
-                </div>
-                <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://i.ibb.co/mrzGNxJ3/SCR-20250725-oohz.png" alt="Project Teamgreekgods" class="project-image">
-                        </div>
-                        <div class="project-info">
-                            <h3>SmartFin</h3>
-                            <p class="project-description">SmartFin helps you track your finances analyzing your spending, income, net worth, and showing insights with AI-powered advice.</p>
-                            <div class="project-links">
-                                <a href="https://smartfin-6spd.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-project">Live Demo</a>
-                            </div>
-                        </div>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://i.ibb.co/8g0xSBDK/SCR-20251007-pffn.png" alt="Project Dia" class="project-image">
-                        </div>
-                        <div class="project-info">
-                            <h3>Dia</h3>
-                            <p class="project-description">Dia is Terminal-based AI assistant integrating multiple models for voice commands, screen analysis, and app interactions.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/moumenettaibi/dia" target="_blank" rel="noopener noreferrer" class="btn btn-project">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://i.ibb.co/m5qdcvmg/SCR-20250725-okcu.png" alt="Project Dia Task Manager" class="project-image">
-                        </div>
-                        <div class="project-info">
-                            <h3>Dia - Task Manager</h3>
-                            <p class="project-description">Task Manager AI is a powerful web application that helps you organize your tasks and goals with AI assistance.</p>
-                            <div class="project-links">
-                                <a href="https://tasks-main.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-project">Live Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Get In Touch</h2>
-                    <p class="section-subtitle">Have a question? Send me a message!</p>
-                </div>
-                <div class="contact-content">
-                    <form id="contact-form" action="https://formspree.io/f/movejpzg" method="POST" class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="visually-hidden">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="visually-hidden">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="visually-hidden">Your Message</label>
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary">Send Message</button>
-                        <!-- Notification placeholder -->
-                        <div id="contact-message" class="contact-message hidden"></div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo"><a href="#top" aria-label="Back to top">Moumen</a></div>
-                <div class="footer-social">
-                    <a href="https://github.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-github"></i></a>
-                    <a href="https://x.com/moumenettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-new-twitter"></i></a>
-                    <a href="https://instagram.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-instagram"></i></a>
-                    <a href="https://facebook.com/moumanettaibi" target="_blank" rel="noopener noreferrer" class="social-link"><i class="hgi-stroke hgi-facebook-01"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© <span id="current-year">2025</span> Moumen Et-taibi. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Ensure EmailJS SDK is included -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <!-- Your script file -->
-    <script src="script.js"></script>
+  <div class="card">
+    <h1>Redirecting…</h1>
+    <p>You’re being sent to the new homepage.</p>
+    <p class="small">If you’re not redirected automatically, <a href="https://moumenettaibi.vercel.app/">click here</a>.</p>
+  </div>
 </body>
 </html>
